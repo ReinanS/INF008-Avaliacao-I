@@ -1,4 +1,6 @@
+
 <h3 align="center">
+    <img alt="Logo" title="#logo" width="300px" src="/assets/imgs/logo_java">
     <b>INFOO8 Avaliação I</b>  
 </h3>
   
@@ -12,7 +14,7 @@
 
 ## Sobre
 
-   Primeira avaliação referente a disciplina Programação Orientada a Objetos, ministrada pelo professor [Frederico Barboza](), por meio do repositorio que se encontra [aqui](https://github.com/pooinf008/inf008-20211/tree/master/especificacao).
+   Primeira avaliação referente a disciplina Programação Orientada a Objetos, ministrada pelo professor [Frederico Barboza](http://lattes.cnpq.br/2897532678011764), por meio do repositorio que se encontra [aqui](https://github.com/pooinf008/inf008-20211/tree/master/especificacao).
 
 
    As cores RGB modelam um sistema de cores aditivas em que o Vermelho (Red), o Verde (Green) e o Azul (Blue) são combinados de várias formas de modo a reproduzir um largo espectro cromático. Uma cor RGB é representada por uma 3-upla, onde cada elemento pode assumir um valor de 0 a 255, representando a quantidade de vermelho, verde e azul que compõem a cor. 
@@ -29,10 +31,10 @@ que deve ser truncada para um valor inteiro.
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
 
 1. Escreva
-    - [] Uma classe que represente uma cor RGB. ![#ff0000](https://placehold.it/15/ff0000/000000?text=+)
-    - [] A representação estática da classe criada. ![#ff0000](https://placehold.it/15/ff0000/000000?text=+)
-    - [] Os métodos que lêem e alteram os valores das componentes RGB da cor. ![#ff0000](https://placehold.it/15/ff0000/000000?text=+)
-    - [] Um método que leia a luminosidade da cor. ![#ff0000](https://placehold.it/15/ff0000/000000?text=+)
+    - [ ] Uma classe que represente uma cor RGB. ![#ff0000](https://placehold.it/15/ff0000/000000?text=+)
+    - [ ] A representação estática da classe criada. ![#ff0000](https://placehold.it/15/ff0000/000000?text=+)
+    - [ ] Os métodos que lêem e alteram os valores das componentes RGB da cor. ![#ff0000](https://placehold.it/15/ff0000/000000?text=+)
+    - [ ] Um método que leia a luminosidade da cor. ![#ff0000](https://placehold.it/15/ff0000/000000?text=+)
 
 ##### Legenda
 - ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) = `Feito`
