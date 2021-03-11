@@ -1,6 +1,6 @@
 
 <h3 align="center">
-    <img alt="Logo" title="#logo" width="300px" src="/assets/imgs/logo_java">
+    <img alt="Logo" title="#logo" width="300px" src="/assets/imgs/logo_java.png">
     <b>INFOO8 Avaliação I</b>  
 </h3>
   
