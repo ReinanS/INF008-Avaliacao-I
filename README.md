@@ -31,10 +31,10 @@ que deve ser truncada para um valor inteiro.
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
 
 1. Escreva
-    - [ ] Uma classe que represente uma cor RGB. ![#ff0000](https://placehold.it/15/ff0000/000000?text=+)
-    - [ ] A representação estática da classe criada. ![#ff0000](https://placehold.it/15/ff0000/000000?text=+)
-    - [ ] Os métodos que lêem e alteram os valores das componentes RGB da cor. ![#ff0000](https://placehold.it/15/ff0000/000000?text=+)
-    - [ ] Um método que leia a luminosidade da cor. ![#ff0000](https://placehold.it/15/ff0000/000000?text=+)
+    - Uma classe que represente uma cor RGB. ![#ff0000](https://placehold.it/15/ff0000/000000?text=+)
+    - A representação estática da classe criada. ![#ff0000](https://placehold.it/15/ff0000/000000?text=+)
+    - Os métodos que lêem e alteram os valores das componentes RGB da cor. ![#ff0000](https://placehold.it/15/ff0000/000000?text=+)
+    - Um método que leia a luminosidade da cor. ![#ff0000](https://placehold.it/15/ff0000/000000?text=+)
 
 ##### Legenda
 - ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) = `Feito`
