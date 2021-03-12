@@ -34,10 +34,10 @@ que deve ser truncada para um valor inteiro.
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
 
 1. Escreva
-    - [ ] Uma classe que represente uma cor RGB. ![#ff0000](https://placehold.it/15/ff0000/000000?text=+)
-    - [ ] A representação estática da classe criada. ![#ff0000](https://placehold.it/15/ff0000/000000?text=+)
-    - [ ] Os métodos que lêem e alteram os valores das componentes RGB da cor. ![#ff0000](https://placehold.it/15/ff0000/000000?text=+)
-    - [ ] Um método que leia a luminosidade da cor. ![#ff0000](https://placehold.it/15/ff0000/000000?text=+)
+    - [x] Uma classe que represente uma cor RGB. ![#c5f015](https://placehold.it/15/c5f015/000000?text=+)
+    - [x] A representação estática da classe criada. ![#c5f015](https://placehold.it/15/c5f015/000000?text=+)
+    - [x] Os métodos que lêem e alteram os valores das componentes RGB da cor. ![#c5f015](https://placehold.it/15/c5f015/000000?text=+)
+    - [x] Um método que leia a luminosidade da cor. ![#c5f015](https://placehold.it/15/c5f015/000000?text=+)
 
 ##### Legenda
 - ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) = `Feito`
@@ -72,5 +72,7 @@ Esse projeto foi desenvolvido utilizando a seguinte tecnologia, e pacotes:
 - Push sua branch: `git push origin my-feature`
 
 <h4 align="center">
-    Made by <a href="https://www.linkedin.com/in/reinan-santos99/" target="_blank">Reinan Santos & Victor Cerqueira</a>
+    Made by <a href="https://github.com/ReinanS" target="_blank">Reinan Santos</a> & <a href="https://github.com/cerqueirav" target="_blank">Victor Cerqueira</a> 
 </h4>
+
+ 
