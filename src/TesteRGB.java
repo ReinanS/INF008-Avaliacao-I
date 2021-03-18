@@ -7,5 +7,6 @@ public class TesteRGB {
         System.out.println(color2.getColorHex());
 
         System.out.println(color.getLuminosidade());
+
     }
 }
