@@ -16,9 +16,6 @@ public class RGB {
         this.blue = validaBlue(_blue);
     }
 
-    
-
-
     public int getRed() {
         return red;
     }
@@ -29,18 +26,6 @@ public class RGB {
 
     public int getBlue() {
         return blue;
-    }
-
-    public void setRed(int _red){
-        this.red = validaRed(_red);
-    }
-
-    public void setGreen(int _green) {
-        this.green = validaGreen(_green);
-    }
-
-    public void setBlue(int _blue) {
-        this.blue = validaBlue(_blue);
     }
 
     public int validaRed(int _red) {
