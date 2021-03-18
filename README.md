@@ -38,6 +38,7 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
     - [x] A representação estática da classe criada. ![#c5f015](https://placehold.it/15/c5f015/000000?text=+)
     - [x] Os métodos que lêem e alteram os valores das componentes RGB da cor. ![#c5f015](https://placehold.it/15/c5f015/000000?text=+)
     - [x] Um método que leia a luminosidade da cor. ![#c5f015](https://placehold.it/15/c5f015/000000?text=+)
+    - [x] um método que gere uma representação String da cor como hexadecimal. A representação é composta pelo caracter # seguida de dois dígitos representando o valor de R, G e B em hexa. ![#c5f015](https://placehold.it/15/c5f015/000000?text=+)
 
 ##### Legenda
 - ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) = `Feito`
