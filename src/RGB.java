@@ -3,11 +3,21 @@ public class RGB {
     private int green;
     private int blue;
 
+
+    public RGB() {
+        this.red = 0;
+        this.green = 0;
+        this.blue = 0;
+    }
+
     public RGB(int _red, int _green, int _blue){
         this.red = validaRed(_red);
         this.green = validaGreen(_green);
         this.blue = validaBlue(_blue);
     }
+
+    
+
 
     public int getRed() {
         return red;
@@ -54,6 +64,13 @@ public class RGB {
          else return _blue;
     }
 
+
+    public boolean isEqual(RGB rgb) {
+        return (this.red == rgb.red) && (this.green == rgb.green) && (this.blue == rgb.blue);
+    }
+
+
+
     public String decimalToHexa(int decimal){    
         int rem;  
         String hex="";   
@@ -79,5 +96,7 @@ public class RGB {
         double luminosidade = ((this.red*0.3) + (this.green*0.59) + (this.blue*0.11)) / 255;
         return (int) Math.round(luminosidade);
     }
+
+    
 
 }
