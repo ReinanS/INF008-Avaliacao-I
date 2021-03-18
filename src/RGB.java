@@ -48,7 +48,7 @@ public class RGB {
         String sGreen = decimalToHexa(this.green);
         String sBlue = decimalToHexa(this.blue);
          
-        return (sRed + sGreen + sBlue); 
+        return ('#' + sRed + sGreen + sBlue); 
     }
 
     public int getLuminosidade() {
