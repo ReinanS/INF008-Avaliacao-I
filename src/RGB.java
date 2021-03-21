@@ -4,6 +4,12 @@ public class RGB {
     private int blue;
 
 
+    public RGB(RGB color) {
+        this.red = color.getRed();
+        this.green = color.getGreen();
+        this.blue = color.getBlue();
+    }
+
     public RGB() {
         this.red = 0;
         this.green = 0;
@@ -77,11 +83,36 @@ public class RGB {
         return ('#' + sRed + sGreen + sBlue); 
     }
 
+
     public int getLuminosidade() {
         double luminosidade = ((this.red*0.3) + (this.green*0.59) + (this.blue*0.11)) / 255;
         return (int) Math.round(luminosidade);
     }
 
+    public void clarear(double percent) {
+
+         // Primeiro deve pegar o objeto no formato RGB, 
+         // depois alterar a tonalidade
+        this.red -= this.red * percent;
+        this.green -= this.green * percent;
+        this.red -= this.red * percent;
+    }
     
+    public void escurecer(double percent) {
+        this.red += this.red * percent;
+        this.green += this.green * percent;
+        this.red += this.red * percent;
+    }   
+
+    public RGB hextoRGB(String hex) {
+        
+        // indice 0 == #
+        int _red = Integer.valueOf(hex.substring(1, 3), 16);
+        int _green = Integer.valueOf(hex.substring(3, 5), 16);
+        int _blue = Integer.valueOf(hex.substring(5, 7), 16);
+
+        return new RGB(_red, _green, _blue);
+    }
+
 
 }
