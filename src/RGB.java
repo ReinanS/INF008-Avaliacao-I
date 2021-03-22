@@ -72,8 +72,6 @@ public class RGB {
 
     public void clarear(double percent) {
         if (percent > 0){
-         // Primeiro deve pegar o objeto no formato RGB, 
-         // depois alterar a tonalidade
             this.red -= this.red * percent;
             this.green -= this.green * percent;
             this.blue -= this.blue * percent;
@@ -88,12 +86,12 @@ public class RGB {
         }
     }
     
-    public RGB hextoRGB(String hex) {  
+    public RGB hexToRGB(String hex) {  
         // indice 0 == #
-        int _red = Integer.valueOf(hex.substring(1, 3), 16);
-        int _green = Integer.valueOf(hex.substring(3, 5), 16);
-        int _blue = Integer.valueOf(hex.substring(5, 7), 16);
+        int iRed = Integer.valueOf(hex.substring(1, 3), 16);
+        int iGreen = Integer.valueOf(hex.substring(3, 5), 16);
+        int iBlue = Integer.valueOf(hex.substring(5, 7), 16);
 
-        return new RGB(_red, _green, _blue);
+        return new RGB(iRed, iGreen, iBlue);
     }
 }
