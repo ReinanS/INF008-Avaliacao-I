@@ -3,7 +3,6 @@ public class RGB {
     private int green;
     private int blue;
 
-
     public RGB(RGB color) {
         this.red = color.getRed();
         this.green = color.getGreen();
@@ -17,9 +16,9 @@ public class RGB {
     }
 
     public RGB(int _red, int _green, int _blue){
-        this.red = validaRed(_red);
-        this.green = validaGreen(_green);
-        this.blue = validaBlue(_blue);
+        this.red = validColor(_red);
+        this.green = validColor(_green);
+        this.blue = validColor(_blue);
     }
 
     public int getRed() {
@@ -34,33 +33,16 @@ public class RGB {
         return blue;
     }
 
-    public int validaRed(int _red) {
-        if(_red < 0)  
+    public int validColor(int color){
+        if(color < 0)  
             return 0;
-         else if(_red > 255) return 255;
-         else return _red;
+        else if(color > 255) return 255;
+        else return color;  
     }
-
-    public int validaGreen(int _green) {
-        if(_green < 0)  
-            return 0;
-         else if(_green > 255) return 255;
-         else return _green;
-    }
-
-    public int validaBlue(int _blue) {
-        if(_blue < 0)  
-            return 0;
-         else if(_blue > 255) return 255;
-         else return _blue;
-    }
-
 
     public boolean isEqual(RGB rgb) {
         return (this.red == rgb.red) && (this.green == rgb.green) && (this.blue == rgb.blue);
     }
-
-
 
     public String decimalToHexa(int decimal){    
         int rem;  
@@ -80,9 +62,8 @@ public class RGB {
         String sGreen = decimalToHexa(this.green);
         String sBlue = decimalToHexa(this.blue);
          
-        return ('#' + sRed + sGreen + sBlue); 
+        return ("#" + sRed + sGreen + sBlue); 
     }
-
 
     public int getLuminosidade() {
         double luminosidade = ((this.red*0.3) + (this.green*0.59) + (this.blue*0.11)) / 255;
@@ -90,22 +71,24 @@ public class RGB {
     }
 
     public void clarear(double percent) {
-
+        if (percent > 0){
          // Primeiro deve pegar o objeto no formato RGB, 
          // depois alterar a tonalidade
-        this.red -= this.red * percent;
-        this.green -= this.green * percent;
-        this.red -= this.red * percent;
+            this.red -= this.red * percent;
+            this.green -= this.green * percent;
+            this.blue -= this.blue * percent;
+        }
     }
     
     public void escurecer(double percent) {
-        this.red += this.red * percent;
-        this.green += this.green * percent;
-        this.red += this.red * percent;
-    }   
-
-    public RGB hextoRGB(String hex) {
-        
+        if (percent > 0){    
+            this.red += this.red * percent;
+            this.green += this.green * percent;
+            this.blue += this.blue * percent;
+        }
+    }
+    
+    public RGB hextoRGB(String hex) {  
         // indice 0 == #
         int _red = Integer.valueOf(hex.substring(1, 3), 16);
         int _green = Integer.valueOf(hex.substring(3, 5), 16);
@@ -113,6 +96,4 @@ public class RGB {
 
         return new RGB(_red, _green, _blue);
     }
-
-
 }
