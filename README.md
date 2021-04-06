@@ -34,7 +34,6 @@ que deve ser truncada para um valor inteiro.
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
 
 1. Escreva
-   
     - [ ] Adicionar Teste Unitário. ![#ff0000](https://placehold.it/15/ff0000/000000?text=+)
     - [x] Uma classe que represente uma cor RGB. ![#c5f015](https://placehold.it/15/c5f015/000000?text=+)
     - [x] A representação estática da classe criada. ![#c5f015](https://placehold.it/15/c5f015/000000?text=+)
