@@ -62,11 +62,9 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
     - VII. método que verifique se uma imagem é um fragmento da outra 🔴
 
 </br>
-</br>
-</br>
 
 ### Métodos Opcionais/sugestões
-- Uso de Testes Unitários para a aplicação.
+- Uso de Testes Unitários para a aplicação. 🔴
 
 </br>
 
