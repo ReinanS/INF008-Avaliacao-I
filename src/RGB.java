@@ -41,7 +41,7 @@ public class RGB {
     }
 
     public boolean isEqual(RGB rgb) {
-        return (this.red == rgb.red) && (this.green == rgb.green) && (this.blue == rgb.blue);
+        return (this.red == rgb.getRed()) && (this.green == rgb.getGreen()) && (this.blue == rgb.getBlue());
     }
 
     public String decimalToHexa(int decimal){    
@@ -58,31 +58,31 @@ public class RGB {
     }
 
     public String getColorHex(){
-        String sRed = decimalToHexa(this.red);
-        String sGreen = decimalToHexa(this.green);
-        String sBlue = decimalToHexa(this.blue);
+        String sRed = decimalToHexa(getRed());
+        String sGreen = decimalToHexa(getGreen());
+        String sBlue = decimalToHexa(getBlue());
          
         return ("#" + sRed + sGreen + sBlue); 
     }
 
     public int getLuminosidade() {
-        double luminosidade = ((this.red*0.3) + (this.green*0.59) + (this.blue*0.11)) / 255;
+        double luminosidade = (getRed() * 0.3) + (getGreen() * 0.59) + (getBlue() * 0.11) / 255;
         return (int) Math.round(luminosidade);
     }
 
     public void clarear(double percent) {
         if (percent > 0){
-            this.red -= this.red * percent;
-            this.green -= this.green * percent;
-            this.blue -= this.blue * percent;
+            this.red -= getRed() * percent;
+            this.green -= getGreen() * percent;
+            this.blue -= getBlue() * percent;
         }
     }
     
     public void escurecer(double percent) {
         if (percent > 0){    
-            this.red += this.red * percent;
-            this.green += this.green * percent;
-            this.blue += this.blue * percent;
+            this.red += getRed() * percent;
+            this.green += getGreen() * percent;
+            this.blue += getBlue() * percent;
         }
     }
     
