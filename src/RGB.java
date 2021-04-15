@@ -74,19 +74,16 @@ public class RGB {
     }
 
     public void clarear(double percent) {
-        if (percent > 0){
-            this.red -= getRed() * percent;
-            this.green -= getGreen() * percent;
-            this.blue -= getBlue() * percent;
-        }
+        this.red += getRed() * percent;
+        this.green += getGreen() * percent;
+        this.blue += getBlue() * percent;
+        
     }
     
     public void escurecer(double percent) {
-        if (percent > 0){    
-            this.red += getRed() * percent;
-            this.green += getGreen() * percent;
-            this.blue += getBlue() * percent;
-        }
+        this.red -= getRed() * percent;
+        this.green -= getGreen() * percent;
+        this.blue -= getBlue() * percent;   
     }
     
     public RGB hexToRGB(String hex) {  
@@ -103,5 +100,5 @@ public class RGB {
 
         return color;
     }
- 
+
 }
