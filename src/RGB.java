@@ -101,4 +101,23 @@ public class RGB {
         return color;
     }
 
+    // TESTES UNITARIOS
+    public void TesteClarear() {
+        System.out.println("Antes = " + this.getColorHex());
+
+        this.clarear(0.1);
+        System.out.println("Depois = " + this.getColorHex());
+
+        System.out.println(this.getColorHex().equalsIgnoreCase("#2187AB"));
+    }
+
+    public void TesteEscurecer() {
+        System.out.println("Antes = " + this.getColorHex());
+
+        this.escurecer(0.1);
+        System.out.println("Depois = " + this.getColorHex());
+
+        System.out.println(this.getColorHex().equalsIgnoreCase("#2187AB"));
+    }
+ 
 }
