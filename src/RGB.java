@@ -103,21 +103,23 @@ public class RGB {
 
     // TESTES UNITARIOS
     public void TesteClarear() {
+        System.out.println("***** Clarear *******");
         System.out.println("Antes = " + this.getColorHex());
 
         this.clarear(0.1);
         System.out.println("Depois = " + this.getColorHex());
 
-        System.out.println(this.getColorHex().equalsIgnoreCase("#2187AB"));
+        System.out.println("Resultado: " + this.getColorHex().equalsIgnoreCase("#2187AB"));
     }
 
     public void TesteEscurecer() {
+        System.out.println("***** Escurecer *******");
         System.out.println("Antes = " + this.getColorHex());
 
         this.escurecer(0.1);
         System.out.println("Depois = " + this.getColorHex());
 
-        System.out.println(this.getColorHex().equalsIgnoreCase("#2187AB"));
+        System.out.println("Resultado: " + this.getColorHex().equalsIgnoreCase("#2187AB"));
     }
  
 }
