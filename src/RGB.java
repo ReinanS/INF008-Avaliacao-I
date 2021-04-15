@@ -3,18 +3,21 @@ public class RGB {
     private int green;
     private int blue;
 
+    // Construtor de Cópia
     public RGB(RGB color) {
         this.red = color.getRed();
         this.green = color.getGreen();
         this.blue = color.getBlue();
     }
 
+    // Construtor Cor Preta
     public RGB() {
         this.red = 0;
         this.green = 0;
         this.blue = 0;
     }
 
+    // Contrutor Cria Cor RGB
     public RGB(int _red, int _green, int _blue){
         this.red = validColor(_red);
         this.green = validColor(_green);
@@ -94,4 +97,11 @@ public class RGB {
 
         return new RGB(iRed, iGreen, iBlue);
     }
+
+    public RGB corAtual() {
+        RGB color = new RGB(this.red, this.green, this.blue);
+
+        return color;
+    }
+ 
 }
