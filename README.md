@@ -45,13 +45,12 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
     - XIII. Um método clarear que receba um valor e modifique a tonalidade da cor em questão a tornando mais clara. Para isso, o método deve modificar os valores RGB, para um novo valor p percentual maior, onde p deve ser indicado como parâmetro. Por exemplo, para a cor  #2596BE, se o parâmetro de clarear for 0.1 (10%), a cor deve se tornar #3BA1C5. 🟢
     - XIV. Um método escurecer que receba um valor e modifique a tonalidade da cor em questão a tornando mais escura. Para isso, o método deve modificar os valores RGB, para um novo valor p percentual menor, onde p deve ser indicado como parâmetro. Por exemplo, para a cor  #2596BE, se o parâmetro de escurecer for 0.1 (10%), a cor deve se tornar #2187AB. 🟢
     - XV. Um método que retorne uma nova instância de CorRGB, igual a cor que recebeu a mensagem. 🟢
-    - XVI. Atributos de classe que permitam reduzir o número de instâncias em uso de cores comuns.
-        - I.   PRETA #000000 🔴
-        - II.  BRANCA #FFFFFF 🔴
-        - III. RED #FF0000 🔴
-        - IV.  GREEN #00FF00 🔴
-        - V.   BLUE #0000FF 🔴
-
+    - XVI. Atributos de classe que permitam reduzir o número de instâncias em uso de cores comuns. 🟢
+          - I. PRETA #000000 🟢
+          - II. BRANCA #FFFFFF 🟢
+          - III. RED #FF0000 🟢
+          - IV. GREEN #00FF00 🟢
+          - V. BLUE #0000FF 🟢
 </br>
 
 2. Escreva uma classe que represente uma Imagem como um mapa bidimensional de cores RGB.
