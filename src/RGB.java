@@ -1,4 +1,10 @@
 public class RGB {
+    public static final RGB PRETA  = new RGB(0,0,0);
+    public static final RGB BRANCA = new RGB(255,255,255);
+    public static final RGB RED = new RGB(255,0,0);
+    public static final RGB GREEN = new RGB(0,255,0);
+    public static final RGB BLUE = new RGB(0,0,255);
+
     private int red;
     private int green;
     private int blue;
@@ -69,7 +75,7 @@ public class RGB {
     }
 
     public int getLuminosidade() {
-        double luminosidade = (this.getRed() * 0.3) + (this.getGreen() * 0.59) + (this.getBlue() * 0.11) / 255;
+        double luminosidade = (this.getRed() * 0.3) + (this.getGreen() * 0.59) + (this.getBlue() * 0.11);
         return (int) Math.round(luminosidade);
     }
 
@@ -77,7 +83,6 @@ public class RGB {
         this.red += this.getRed() * percent;
         this.green += this.getGreen() * percent;
         this.blue += this.getBlue() * percent;
-        
     }
     
     public void escurecer(double percent) {
@@ -96,30 +101,35 @@ public class RGB {
     }
 
     public RGB corAtual() {
-        RGB color = new RGB(this.red, this.green, this.blue);
-
+        RGB color = new RGB(this.getRed(), this.getGreen(), this.getBlue());
         return color;
     }
 
     String imprimeRGB() {
         return (this.getRed() + ", " + this.getGreen() + ", " + this.getBlue());
+    }
         
+    public RGB converterCorParaCinza(){
+        RGB color = this.corAtual();
+        
+        color.red = color.green = color.blue = getLuminosidade();
+        return color;
     }
 
     // TESTES UNITARIOS
 
     // SOBRECARGA COM VALOR HEXADECIMAL
-    public void TesteClarear(String objetivo) {
+    public void TesteClarear(String objetivo, double percent) {
         System.out.println("***** Clarear *******");
         System.out.println("Antes = " + this.getColorHex());
 
-        this.clarear(0.1);
+        this.clarear(percent);
         System.out.println("Depois = " + this.getColorHex());
 
         System.out.println("Resultado: " + this.getColorHex().equalsIgnoreCase(objetivo));
     }
 
-    public void TesteEscurecer(String objetivo) {
+    public void TesteEscurecer(String objetivo, double percent) {
         System.out.println("***** Escurecer *******");
         System.out.println("Antes = " + this.getColorHex());
 
@@ -129,54 +139,15 @@ public class RGB {
         System.out.println("Resultado: " + this.getColorHex().equalsIgnoreCase(objetivo));
     }
 
-    // SOBRECARGA COM VALORES INTEIROS
-    public void TesteClarear(int red, int green, int blue) {
-        System.out.println("***** Clarear *******");
+    public void TesteConverteEmCinza(String objetivo){
+        System.out.println("***** Converter cor para Cinza *******");
+        System.out.println("Antes = " + this.getColorHex());
 
-        this.clarear(0.1);
+        RGB teste = this.converterCorParaCinza();
 
-        System.out.println("Novo RGB = " + this.imprimeRGB());
+        System.out.println("Depois = " + teste.getColorHex());
 
-        if((this.getRed() == red) && (this.getGreen() == green) && (this.getBlue() == blue)) {
-            System.out.println("true");
-        } else {
-            System.out.println("false");
-        }
+        System.out.println("Resultado: " + teste.getColorHex().equalsIgnoreCase(objetivo));
     }
-
-    public void TesteEscurecer(int red, int green, int blue) {
-        System.out.println("***** Escurecer *******");
-
-        this.escurecer(0.1);
-
-        System.out.println("Novo RGB = " + this.imprimeRGB());
-
-        if((this.getRed() == red) && (this.getGreen() == green) && (this.getBlue() == blue)) {
-            System.out.println("true");
-        } else {
-            System.out.println("false");
-        }
-    }
-
-    // SOBRECARGA COM VALOR RGB
-    public void TesteClarear(RGB rgb) {
-        System.out.println("***** Clarear *******");
-
-        this.clarear(0.1);
-
-        System.out.println("Novo RGB = " + this.imprimeRGB());
-
-        System.out.println(this.isEqual(rgb));
-    }
-
-    public void TesteEscurecer(RGB rgb) {
-        System.out.println("***** Escurecer *******");
-
-        this.escurecer(0.1);
-
-        System.out.println("Novo RGB = " + this.imprimeRGB());
-
-        System.out.println(this.isEqual(rgb));
-    }
-
+ 
 }
