@@ -6,5 +6,8 @@ public class TesteRGB {
 
         RGB color2 = new RGB(37, 150, 190); 
         color2.TesteEscurecer();
+
+        RGB color3 = new RGB(37, 150, 190); 
+        color3.TesteConverteEmCinza();
     }
 }
