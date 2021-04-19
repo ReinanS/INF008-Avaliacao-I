@@ -101,6 +101,16 @@ public class RGB {
         return color;
     }
 
+    public RGB converterCorParaCinza(){
+        RGB color = new RGB(this.red, this.green, this.blue);
+
+        double iCorCinza = Math.round ((getRed() * 0.30) + (getGreen() * 0.59) + (getBlue() * 0.11));
+
+        color.red = color.green = color.blue =  (int) iCorCinza;
+
+        return color;
+    }
+
     // TESTES UNITARIOS
     public void TesteClarear() {
         System.out.println("***** Clarear *******");
@@ -120,6 +130,17 @@ public class RGB {
         System.out.println("Depois = " + this.getColorHex());
 
         System.out.println("Resultado: " + this.getColorHex().equalsIgnoreCase("#2187AB"));
+    }
+
+    public void TesteConverteEmCinza(){
+        System.out.println("***** Converter cor para Cinza *******");
+        System.out.println("Antes = " + this.getColorHex());
+
+        RGB teste = this.converterCorParaCinza();
+
+        System.out.println("Depois = " + teste.getColorHex());
+
+        System.out.println("Resultado: " + teste.getColorHex().equalsIgnoreCase("#797979"));
     }
  
 }
