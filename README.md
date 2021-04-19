@@ -54,10 +54,11 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 </br>
 
 2. Escreva uma classe que represente uma Imagem como um mapa bidimensional de cores RGB.
-    - I. a representação estática da classe criada 🔴
-    II. um construtor que crie uma Imagem. O tamanho da Imagem será passado como parâmetro no construtor. A imagem criada deve ter todos os píxels ajustados para o BRANCO 🔴
+    - I. a representação estática da classe criada 🟢
+    - II. um construtor que crie uma Imagem. O tamanho da Imagem será passado como parâmetro no construtor. 🟢
+    - III. A imagem criada deve ter todos os píxels ajustados para o BRANCO 🟢
     - III. um método que modifique o pixel de uma imagem dada a posição e o pixel 🔴
-    - IV. sobrecarregue este método para modifique o pixel de uma imagem dada a posição e os valores de RGB do pixel.
+    - IV. sobrecarregue este método para modifique o pixel de uma imagem dada a posição e os valores de RGB do pixel. 🔴
     - V. método que verifique que duas imagens são iguais 🔴
     - VI. método que crie uma nova imagem com o equivalente em tons de cinza. Essa imagem deve ter os valores de cada pixel da cor original substituido pelo seu equivalente em cor de cinza. 🔴
     - VII. método que verifique se uma imagem é um fragmento da outra 🔴
