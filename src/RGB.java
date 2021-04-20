@@ -9,21 +9,21 @@ public class RGB {
     private int green;
     private int blue;
 
-    // Contrutor Cria Cor RGB
-    public RGB(int _red, int _green, int _blue){
-        this.setRed(red);
-        this.setGreen(green);
-        this.setBlue(blue);
-    }
-
-    // Construtor de Cópia
-    public RGB(RGB color) {
-        this(color.getBlue(), color.getGreen(), color.getBlue());
+     // Construtor de Cópia
+     public RGB(RGB color) {
+        this(color.getRed(), color.getGreen(), color.getBlue());
     }
 
     // Construtor Cor Preta
     public RGB() {
         this(0, 0, 0);
+    }
+
+    // Contrutor Cria Cor RGB
+    public RGB(int _red, int _green, int _blue){
+        this.setRed(_red);
+        this.setGreen(_green);
+        this.setBlue(_blue);
     }
 
     public int getRed() {
@@ -51,10 +51,11 @@ public class RGB {
     }
 
     public int validColor(int color){
+        
         if(color < 0){
           return 0;
         }
-        else if(color > 255){
+        if(color > 255){
             return 255;
         }
         return color;  
@@ -91,7 +92,7 @@ public class RGB {
     }
 
     public void clarear(double percent) {
-        int red = (int ) (this.getRed() * (1 + percent));
+        int red = (int) (this.getRed() * (1 + percent));
         int green = (int) (this.getGreen() * (1 + percent));
         int blue = (int) (this.getBlue() * (1 + percent));
 
@@ -101,9 +102,13 @@ public class RGB {
     }
     
     public void escurecer(double percent) {
-        this.red -= this.getRed() * percent;
-        this.green -= this.getGreen() * percent;
-        this.blue -= this.getBlue() * percent;   
+        int red = (int) (this.getRed() * (1 + percent));
+        int green = (int) (this.getGreen() * (1 + percent));
+        int blue = (int) (this.getBlue() * (1 + percent));
+
+        this.setRed(red);
+        this.setGreen(green);
+        this.setBlue(blue);
     }
     
     public RGB hexToRGB(String hex) {  
@@ -118,10 +123,6 @@ public class RGB {
     public RGB corAtual() {
         RGB color = new RGB(this.getRed(), this.getGreen(), this.getBlue());
         return color;
-    }
-
-    String imprimeRGB() {
-        return (this.getRed() + ", " + this.getGreen() + ", " + this.getBlue());
     }
         
     public RGB converterCorParaCinza(){
