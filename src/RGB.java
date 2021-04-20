@@ -9,25 +9,21 @@ public class RGB {
     private int green;
     private int blue;
 
+    // Contrutor Cria Cor RGB
+    public RGB(int _red, int _green, int _blue){
+        this.setRed(red);
+        this.setGreen(green);
+        this.setBlue(blue);
+    }
+
     // Construtor de Cópia
     public RGB(RGB color) {
-        this.red = color.getRed();
-        this.green = color.getGreen();
-        this.blue = color.getBlue();
+        this(color.getBlue(), color.getGreen(), color.getBlue());
     }
 
     // Construtor Cor Preta
     public RGB() {
-        this.red = 0;
-        this.green = 0;
-        this.blue = 0;
-    }
-
-    // Contrutor Cria Cor RGB
-    public RGB(int _red, int _green, int _blue){
-        this.red = validColor(_red);
-        this.green = validColor(_green);
-        this.blue = validColor(_blue);
+        this(0, 0, 0);
     }
 
     public int getRed() {
@@ -40,6 +36,18 @@ public class RGB {
 
     public int getBlue() {
         return blue;
+    }
+
+    public void setRed(int red) {
+        this.red = this.validColor(red);
+    }
+
+    public void setGreen(int green) {
+        this.green = this.validColor(green);
+    }
+
+    public void setBlue(int blue) {
+        this.blue = this.validColor(blue);
     }
 
     public int validColor(int color){
