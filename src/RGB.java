@@ -51,10 +51,13 @@ public class RGB {
     }
 
     public int validColor(int color){
-        if(color < 0)  
-            return 0;
-        else if(color > 255) return 255;
-        else return color;  
+        if(color < 0){
+          return 0;
+        }
+        else if(color > 255){
+            return 255;
+        }
+        return color;  
     }
 
     public boolean isEqual(RGB rgb) {
@@ -88,9 +91,13 @@ public class RGB {
     }
 
     public void clarear(double percent) {
-        this.red += this.getRed() * percent;
-        this.green += this.getGreen() * percent;
-        this.blue += this.getBlue() * percent;
+        int red = (int ) (this.getRed() * (1 + percent));
+        int green = (int) (this.getGreen() * (1 + percent));
+        int blue = (int) (this.getBlue() * (1 + percent));
+
+        this.setRed(red);
+        this.setGreen(green);
+        this.setBlue(blue);
     }
     
     public void escurecer(double percent) {
