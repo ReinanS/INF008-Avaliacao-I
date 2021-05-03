@@ -127,8 +127,12 @@ public class RGB {
         
     public RGB converterCorParaCinza(){
         RGB color = this.corAtual();
+        int luminosidade = this.getLuminosidade();
         
-        color.red = color.green = color.blue = getLuminosidade();
+        color.red = luminosidade;
+        color.green = luminosidade;
+        color.blue = luminosidade;
+        
         return color;
     }
 
