@@ -20,22 +20,22 @@ public class RGB {
     }
 
     // Contrutor Cria Cor RGB
-    public RGB(int _red, int _green, int _blue){
-        this.setRed(_red);
-        this.setGreen(_green);
-        this.setBlue(_blue);
+    public RGB(int red, int green, int blue){
+        this.setRed(red);
+        this.setGreen(green);
+        this.setBlue(blue);
     }
 
     public int getRed() {
-        return red;
+        return this.red;
     }
     
     public int getGreen() {
-        return green;
+        return this.green;
     }
 
     public int getBlue() {
-        return blue;
+        return this.blue;
     }
 
     public void setRed(int red) {
@@ -65,25 +65,33 @@ public class RGB {
         return (this.getRed() == rgb.getRed()) && (this.getGreen() == rgb.getGreen()) && (this.getBlue() == rgb.getBlue());
     }
 
-    public String decimalToHexa(int decimal){    
-        int rem;  
-        String hex="";   
-        char hexchars[]={'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};  
-        while(decimal>0)  
-        {  
-          rem=decimal%16;   
-          hex=hexchars[rem]+hex;   
-          decimal=decimal/16;  
-        }  
-       return hex;  
-    }
+    // public String decimalToHexa(int decimal){    
+    //     int rem;  
+    //     String hex="";   
+    //     char hexchars[]={'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};  
+    //     while(decimal>0)  
+    //     {  
+    //       rem=decimal%16;   
+    //       hex=hexchars[rem]+hex;   
+    //       decimal=decimal/16;  
+    //     }  
+    //    return hex;  
+    // }
+
+    // public String getColorHex(){
+    //     String sRed = this.decimalToHexa(this.getRed());
+    //     String sGreen = this.decimalToHexa(this.getGreen());
+    //     String sBlue = this.decimalToHexa(this.getBlue());
+         
+    //     return ("#" + sRed + sGreen + sBlue); 
+    // }
 
     public String getColorHex(){
-        String sRed = this.decimalToHexa(this.getRed());
-        String sGreen = this.decimalToHexa(this.getGreen());
-        String sBlue = this.decimalToHexa(this.getBlue());
-         
-        return ("#" + sRed + sGreen + sBlue); 
+        String sRed = Integer.toHexString(this.getRed());
+        String sGreen = Integer.toHexString(this.getGreen());
+        String sBlue = Integer.toHexString(this.getBlue());
+
+        return ("#" + sRed + sGreen + sBlue).toUpperCase();
     }
 
     public int getLuminosidade() {
@@ -92,47 +100,28 @@ public class RGB {
     }
 
     public void clarear(double percent) {
-        int red = (int) (this.getRed() * (1 + percent));
-        int green = (int) (this.getGreen() * (1 + percent));
-        int blue = (int) (this.getBlue() * (1 + percent));
+        percent += 1;
 
-        this.setRed(red);
-        this.setGreen(green);
-        this.setBlue(blue);
+        this.setRed((int) (this.getRed() * percent));
+        this.setGreen((int) (this.getGreen() * percent));
+        this.setBlue((int) (this.getBlue() * percent));
     }
     
     public void escurecer(double percent) {
-        int red = (int) (this.getRed() * (1 + percent));
-        int green = (int) (this.getGreen() * (1 + percent));
-        int blue = (int) (this.getBlue() * (1 + percent));
+        percent = 1 - percent;
 
-        this.setRed(red);
-        this.setGreen(green);
-        this.setBlue(blue);
+        this.setRed((int) (this.getRed() * percent));
+        this.setGreen((int) (this.getGreen() * percent));
+        this.setBlue((int) (this.getBlue() * percent));
     }
     
-    public RGB hexToRGB(String hex) {  
-        // indice 0 == #
-        int iRed = Integer.valueOf(hex.substring(1, 3), 16);
-        int iGreen = Integer.valueOf(hex.substring(3, 5), 16);
-        int iBlue = Integer.valueOf(hex.substring(5, 7), 16);
-
-        return new RGB(iRed, iGreen, iBlue);
-    }
-
     public RGB corAtual() {
-        RGB color = new RGB(this.getRed(), this.getGreen(), this.getBlue());
-        return color;
+        return new RGB(this.getRed(), this.getGreen(), this.getBlue());
     }
         
     public RGB converterCorParaCinza(){
-        RGB color = this.corAtual();
         int luminosidade = this.getLuminosidade();
-        
-        color.red = luminosidade;
-        color.green = luminosidade;
-        color.blue = luminosidade;
-        
+        RGB color = new RGB(luminosidade, luminosidade, luminosidade);
         return color;
     }
 
@@ -153,7 +142,7 @@ public class RGB {
         System.out.println("***** Escurecer *******");
         System.out.println("Antes = " + this.getColorHex());
 
-        this.escurecer(0.1);
+        this.escurecer(percent);
         System.out.println("Depois = " + this.getColorHex());
 
         System.out.println("Resultado: " + this.getColorHex().equalsIgnoreCase(objetivo));
