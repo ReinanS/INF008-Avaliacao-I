@@ -28,6 +28,36 @@ public class Image {
         this.pixel[row][column] = pixel;
     }
 
-    
+    // Contrutor de Cópia
+    public Image(Image origem) {
+
+        int height = this.getHeight();
+        int width = this.getWidth();
+        
+        // Cria Imagem com a mesma altura e largura
+        this.pixel = new ColorRGB[height][width];
+
+
+        // Copia os pixel do origem
+        for(int i = 0; i < height; i++) {
+            for(int j = 0; j < width; j++) {
+                this.pixel[i][j] = new ColorRGB(origem.getPixel(i, j));
+            }
+        }
+    }
+
+
+    public int getHeight() {
+        return this.pixel.length;
+    }
+
+    public int getWidth() {
+        // o tamanho da linha é a largura do pixel
+        return this.pixel[0].length;
+    }
+
+    public ColorRGB getPixel(int row, int column) {
+        return this.pixel[row][column];
+    }
 
 }
