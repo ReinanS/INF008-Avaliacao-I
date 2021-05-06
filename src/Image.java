@@ -16,4 +16,9 @@ public class Image {
         }
     }
 
+    // III. um método que modifique o pixel de uma imagem dada a posição e o pixel
+    public void modificaPixel(int row, int column, ColorRGB pixel) {
+        this.pixel[row][column] = pixel;
+    }
+
 }
