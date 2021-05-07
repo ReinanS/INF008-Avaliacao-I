@@ -28,22 +28,19 @@ public class Image {
         this.pixel[row][column] = pixel;
     }
 
-    // Contrutor de Cópia
-    public Image(Image origem) {
+    // V. método que verifique que duas imagens são iguais
+    public boolean equals(Image pixel) {
 
-        int height = this.getHeight();
-        int width = this.getWidth();
-        
-        // Cria Imagem com a mesma altura e largura
-        this.pixel = new ColorRGB[height][width];
+    }
 
+    // VI. método que crie uma nova imagem com o equivalente em tons de cinza. Essa imagem
+    // deve ter os valores de cada pixel da cor original substituido pelo seu equivalente em 
+    // cor de cinza.
+    public Image turnGrey() {
+        Image greyImage = new Image(this);
+        greyImage.greyScale();
 
-        // Copia os pixel do origem
-        for(int i = 0; i < height; i++) {
-            for(int j = 0; j < width; j++) {
-                this.pixel[i][j] = new ColorRGB(origem.getPixel(i, j));
-            }
-        }
+        return greyImage;
     }
 
 
@@ -58,6 +55,30 @@ public class Image {
 
     public ColorRGB getPixel(int row, int column) {
         return this.pixel[row][column];
+    }
+
+    public void greyScale() {
+        for(int i = 0; i < this.getHeight(); i ++) {
+            for(int j = 0; j < this.getWidth(); j ++) {
+                this.pixel[i][j].turnGrey();
+            }
+        }
+    }
+
+    // Contrutor de Cópia
+    public Image(Image origem) {
+        int height = this.getHeight();
+        int width = this.getWidth();
+        
+        // Cria Imagem com a mesma altura e largura
+        this.pixel = new ColorRGB[height][width];
+
+        // Copia os pixel do origem
+        for(int i = 0; i < height; i++) {
+            for(int j = 0; j < width; j++) {
+                this.pixel[i][j] = new ColorRGB(origem.getPixel(i, j));
+            }
+        }
     }
 
 }
