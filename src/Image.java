@@ -43,7 +43,7 @@ public class Image {
         return greyImage;
     }
 
-
+    
     public int getHeight() {
         return this.pixel.length;
     }
@@ -51,18 +51,6 @@ public class Image {
     public int getWidth() {
         // o tamanho da linha é a largura do pixel
         return this.pixel[0].length;
-    }
-
-    public ColorRGB getPixel(int row, int column) {
-        return this.pixel[row][column];
-    }
-
-    public void greyScale() {
-        for(int i = 0; i < this.getHeight(); i ++) {
-            for(int j = 0; j < this.getWidth(); j ++) {
-                this.pixel[i][j].turnGrey();
-            }
-        }
     }
 
     // Contrutor de Cópia
@@ -80,5 +68,19 @@ public class Image {
             }
         }
     }
+
+    public ColorRGB getPixel(int row, int column) {
+        return this.pixel[row][column];
+    }
+
+    public void greyScale() {
+        for(int i = 0; i < this.getHeight(); i ++) {
+            for(int j = 0; j < this.getWidth(); j ++) {
+                this.pixel[i][j].turnGrey();
+            }
+        }
+    }
+
+    
 
 }
