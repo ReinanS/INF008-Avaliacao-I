@@ -24,8 +24,7 @@ public class Image {
     // IV. sobrecarregue este método para modifique o pixel de uma imagem dada a posição 
     // e os valores de RGB do pixel.(
     public void modificaPixel(int row, int column, int red, int green, int blue) {
-        ColorRGB pixel = new ColorRGB(red, green, blue);
-        this.pixel[row][column] = pixel;
+        this.pixel[row][column]  = new ColorRGB(red, green, blue);
     }
 
     // V. método que verifique que duas imagens são iguais
