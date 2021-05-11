@@ -44,6 +44,27 @@ public class Image {
     }
 
     
+    private Image turnImage() {
+        Image newImage = new Image(this);
+
+        int width = this.getWidth();
+        int height = this.getHeight();
+
+        //  Rotaciona a Imagem em 90°
+        for(int i = 0; i < width; i ++) {
+            for(int j = 0; j < height; j ++) {
+                newImage.pixel[i][(width - i) - 1] = this.pixel[i][j];
+            }
+        }
+
+        return newImage;
+
+    }
+
+
+
+
+    
     public int getHeight() {
         return this.pixel.length;
     }
