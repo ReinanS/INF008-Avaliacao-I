@@ -43,27 +43,23 @@ public class Image {
     }
 
     
-    private Image turnImage() {
-        Image newImage = new Image(this);
+    private Image turnImage(Image image) {
+        int width = image.getWidth();
+        int height = image.getHeight();
 
-        int width = this.getWidth();
-        int height = this.getHeight();
-
+        // Cria a nova imagem com as dimensões (altura X largura) invertidas
+        Image newImage = new Image(width, height);
+        
         //  Rotaciona a Imagem em 90°
         for(int i = 0; i < width; i ++) {
             for(int j = 0; j < height; j ++) {
                 newImage.pixel[i][(width - i) - 1] = this.pixel[i][j];
             }
         }
-
+        
         return newImage;
-
     }
 
-
-
-
-    
     public int getHeight() {
         return this.pixel.length;
     }
