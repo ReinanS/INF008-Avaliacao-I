@@ -29,7 +29,7 @@ public class Image {
 
     // V. método que verifique que duas imagens são iguais
     public boolean equals(Image pixel) {
-
+        return true;
     }
 
     // VI. método que crie uma nova imagem com o equivalente em tons de cinza. Essa imagem
@@ -40,24 +40,6 @@ public class Image {
         greyImage.greyScale();
 
         return greyImage;
-    }
-
-    
-    private Image turnImage(Image image) {
-        int width = image.getWidth();
-        int height = image.getHeight();
-
-        // Cria a nova imagem com as dimensões (altura X largura) invertidas
-        Image newImage = new Image(width, height);
-        
-        //  Rotaciona a Imagem em 90°
-        for(int i = 0; i < height; i ++) {
-            for(int j = 0; j < width; j ++) {
-                newImage.modificaPixel(j, i, image.getPixel(i, image.getHeight() - j-1));
-            }
-        }
-
-        return newImage;
     }
 
     public int getHeight() {
@@ -97,6 +79,37 @@ public class Image {
         }
     }
 
-    
+     
+    private Image turnImage(Image image) {
+        int width = image.getWidth();
+        int height = image.getHeight();
 
+        // Cria a nova imagem com as dimensões (altura X largura) invertidas
+        Image newImage = new Image(width, height);
+        
+        //  Rotaciona a Imagem em 90°
+        for(int i = 0; i < height; i ++) {
+            for(int j = 0; j < width; j ++) {
+                newImage.modificaPixel(i, j, image.getPixel(image.getHeight() - j-1, i));
+            }
+        }
+
+        return newImage;
+    }
+
+    private boolean isContid(Image image, int height, int width){
+
+        if((height + image.getHeight() > this.getHeight()) || (width + image.getWidth() > this.getWidth()))
+            return false;
+
+        for (int iFrag = 0, iImag = height; iFrag < image.getHeight(); iFrag++, iImag++){
+            for (int jFrag = 0, jImag = width; jFrag < image.getWidth(); jFrag++, jImag++){
+                if(!this.getPixel(iImag, jImag).equals(image.getPixel(iFrag, jFrag)))
+                    return false;
+            }
+        }
+
+        return true;
+    }
+    
 }
