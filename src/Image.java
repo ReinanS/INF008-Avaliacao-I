@@ -51,12 +51,12 @@ public class Image {
         Image newImage = new Image(width, height);
         
         //  Rotaciona a Imagem em 90°
-        for(int i = 0; i < width; i ++) {
-            for(int j = 0; j < height; j ++) {
-                newImage.pixel[i][(width - i) - 1] = this.pixel[i][j];
+        for(int i = 0; i < height; i ++) {
+            for(int j = 0; j < width; j ++) {
+                newImage.modificaPixel(j, i, image.getPixel(i, image.getHeight() - j-1));
             }
         }
-        
+
         return newImage;
     }
 
