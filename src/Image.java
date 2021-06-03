@@ -28,8 +28,18 @@ public class Image {
     }
 
     // V. método que verifique que duas imagens são iguais
-    public boolean equals(Image pixel) {
-        return true;
+    public boolean equals(Image image) {
+
+        // compara todos os lados
+        for(int cont = 0; cont < 4; cont ++) {
+            if(isContid(image, 0, 0))
+                return true;
+                
+            // Vira a imagem
+            image = turnImage(image);
+        }
+
+        return false;
     }
 
     // VI. método que crie uma nova imagem com o equivalente em tons de cinza. Essa imagem
@@ -111,5 +121,5 @@ public class Image {
 
         return true;
     }
-    
+
 }
