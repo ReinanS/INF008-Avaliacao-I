@@ -152,7 +152,7 @@ public class ColorRGB {
         System.out.println("***** Converter cor para Cinza *******");
         System.out.println("Antes = " + this.getColorHex());
 
-        ColorRGB teste = this.converterCorParaCinza();
+        ColorRGB teste = this.turnGrey();
 
         System.out.println("Depois = " + teste.getColorHex());
 
