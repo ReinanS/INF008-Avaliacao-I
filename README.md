@@ -29,7 +29,11 @@
 
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
 
-<details closed>
+ </details>
+    <details closed>
+      <summary>Primeira Expecificação 🟠</summary>
+        
+        <details closed>
   <summary>Classe RGB 🟠</summary>
     <ul>
         <li> I. Uma classe que represente uma cor RGB. 🟢
@@ -71,6 +75,11 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
           <li> VII. método que verifique se uma imagem é um fragmento da outra 🟠
       </ul>
     </details>
+    
+      </ul>
+    </details>
+
+
 </br>
 </br>
 
