@@ -91,7 +91,7 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
       </p>
       <ul>
           <li> I. (3.0) – Escreva um modelo de classes que descreva adequadamente as classes de negócio do problema acima. 🟠
-          <li> II. (3.0) – (4.0) – Escreva todos os métodos necessários para que o sistema receba uma 3-upla, representando uma cor RGB, um limiar de similaridade de luminosidade l e um percentual mínimo p e retorne todos os mapas que possuam ao menos o percentual mínimo p de pixels cuja luminosidade seja similar a da cor RGB informada em +/- l% . Por exemplo, o sistema pode ter que retornar todas as imagens com ao menos 40% dos pixels com luminosidade de +/- 10% do azul puro (0, 0, 255). 🔴
+          <li> II. (4.0) – Escreva todos os métodos necessários para que o sistema receba uma 3-upla, representando uma cor RGB, um limiar de similaridade de luminosidade l e um percentual mínimo p e retorne todos os mapas que possuam ao menos o percentual mínimo p de pixels cuja luminosidade seja similar a da cor RGB informada em +/- l% . Por exemplo, o sistema pode ter que retornar todas as imagens com ao menos 40% dos pixels com luminosidade de +/- 10% do azul puro (0, 0, 255). 🔴
           <br>
           <br>
           <p>
@@ -111,6 +111,7 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 </br>
 
 ### Métodos Opcionais/sugestões
+<li> Revisão de Model construídas na Expecificação I
 <li> Uso de Testes Unitários para a aplicação. 🟠
 
 </br>

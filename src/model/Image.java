@@ -1,3 +1,4 @@
+package model;
 public class Image {
 
     // I. a representação estática da classe criada

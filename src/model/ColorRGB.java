@@ -1,3 +1,4 @@
+package model;
 public class ColorRGB {
     public static final ColorRGB PRETA  = new ColorRGB(0,0,0);
     public static final ColorRGB BRANCA = new ColorRGB(255,255,255);
