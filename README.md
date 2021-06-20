@@ -98,8 +98,8 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
             public Imagem[] getImagemPorLuminosidade(double red, double green, double blue, double pctMinimo, double limiarSimilaridade);
           </p>
           <br>
-          <li> III. (3.0) –  O sistema quer incorporar a possibilidade de converter imagens de um sistema de cor para outro sistema de cor. Por exemplo, converter uma imagem em RGB para uma imagem CMYK; de uma imagem CMYK para uma imagem RGB, etc. O conversor deve criar uma imagem do tipo adequado (aquele que se quer converter) dada as dimensões da imagem original, e depois acrescentar na posição correta um novo pixel representado na cor destino da conversão. Um conversor foi escrito, com esta finalidade e o código é fornecido abaixo. 🔴
-          Para que o conversor seja genérico ele foi baseado em interfaces. Adapte o conversor, para as classes do seu modelo e escreva o código da interface ConversorCor, e uma classe que possa ser utilizada pelo conversor para converter imagens de CMYK para RGB considerando as seguintes equações de conversão:
+          <li> III. (3.0) –  O sistema quer incorporar a possibilidade de converter imagens de um sistema de cor para outro sistema de cor. Por exemplo, converter uma imagem em RGB para uma imagem CMYK; de uma imagem CMYK para uma imagem RGB, etc. O conversor deve criar uma imagem do tipo adequado (aquele que se quer converter) dada as dimensões da imagem original, e depois acrescentar na posição correta um novo pixel representado na cor destino da conversão. Um conversor foi escrito, com esta finalidade e o código é fornecido abaixo.
+          Para que o conversor seja genérico ele foi baseado em interfaces. Adapte o conversor, para as classes do seu modelo e escreva o código da interface ConversorCor, e uma classe que possa ser utilizada pelo conversor para converter imagens de CMYK para RGB considerando as seguintes equações de conversão: 🔴
           <ul>
             <li> R = 255 × (1-C)/100 × (1-K)/100 🔴
             <li> G = 255 × (1-M)/100 × (1-K)/100 🔴
@@ -111,7 +111,7 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 </br>
 
 ### Métodos Opcionais/sugestões
-<li> Revisão de Model construídas na Expecificação I
+<li> Revisão de Models construídas na Expecificação I 🔴
 <li> Uso de Testes Unitários para a aplicação. 🟠
 
 </br>
