@@ -1,10 +1,12 @@
-package model;
+package inf008.model.Mapa;
 
-public class ImagemRGB extends Mapa{
+import inf008.model.Cor.CorRGB;
+
+public class MapaRGB extends Mapa{
     
     private CorRGB[][] pixels;
 	
-	public ImagemRGB(int altura, int largura) {
+	public MapaRGB(int altura, int largura) {
 		this.pixels = new CorRGB[altura][largura];
 		for(int iCont = 0; iCont < this.pixels.length; iCont++)
 			for(int jCont = 0; jCont < this.pixels[iCont].length; jCont++)
@@ -15,6 +17,10 @@ public class ImagemRGB extends Mapa{
 		this.pixels[altura][largura] = pixel;
 	}
 	
+	public void setPixel(int altura, int largura, int red, int green, int blue) {
+		this.setPixel(altura, largura, new CorRGB(red, green, blue));
+	}
+
 	public CorRGB getPixel(int altura, int largura){
 		return this.pixels[altura][largura];
 	}
@@ -27,11 +33,9 @@ public class ImagemRGB extends Mapa{
 		return this.pixels.length; 
 	}
 	
-	public void setPixel(int altura, int largura, int red, int green, int blue) {
-		this.setPixel(altura, largura, new CorRGB(red, green, blue));
-	}	
+		
 	
-	public boolean equals(ImagemRGB imagem) {
+	public boolean equals(MapaRGB imagem) {
 		
 		if(this.getAltura() != imagem.getAltura() ||
 		   this.getLargura() != imagem.getLargura())
@@ -45,8 +49,8 @@ public class ImagemRGB extends Mapa{
 							
 	}
 	
-	public ImagemRGB getGrayScale() {
-		ImagemRGB grayScale = new ImagemRGB(this.getAltura(), this.getLargura());
+	public MapaRGB getGrayScale() {
+		MapaRGB grayScale = new MapaRGB(this.getAltura(), this.getLargura());
 		for(int iCont = 0; iCont < this.pixels.length; iCont++)
 			for(int jCont = 0; jCont < this.pixels[iCont].length; jCont++)
 				grayScale.setPixel(iCont, jCont, this.getPixel(iCont, jCont).getGrayScale());
@@ -54,13 +58,13 @@ public class ImagemRGB extends Mapa{
 	}
 	
 	
-	public ImagemRGB clone() {
+	public MapaRGB clone() {
 		return this.recortar(0, 0, this.getAltura(), this.getLargura());
 	}
 	
 	
-	public boolean isFragmento(ImagemRGB imagem) {
-		ImagemRGB copia = imagem.clone();
+	public boolean isFragmento(MapaRGB imagem) {
+		MapaRGB copia = imagem.clone();
 		for(int iCont = 0; iCont < 4; iCont++) {
 			if(this.fragmento(copia))
 				return true;
@@ -69,7 +73,7 @@ public class ImagemRGB extends Mapa{
 		return false;
 	}
 	
-	private boolean fragmento(ImagemRGB imagem) {
+	private boolean fragmento(MapaRGB imagem) {
 		for(int iCont = 0; iCont <= this.getAltura() - imagem.getAltura(); iCont++)		
 			for(int jCont = 0; jCont <= this.getLargura() - imagem.getLargura(); jCont++)
 				if (this.recortar(iCont, jCont, imagem.getAltura(), imagem.getLargura()).equals(imagem))
@@ -77,23 +81,31 @@ public class ImagemRGB extends Mapa{
 		return false;
 	}
 	
-	public ImagemRGB recortar(int x, int y, int hTam, int lTam) {
+	public MapaRGB recortar(int x, int y, int hTam, int lTam) {
 		int altura = ((this.getAltura() - x) < hTam) ? (this.getAltura() - x) : hTam;
 		int largura = ((this.getLargura() - y) < lTam) ? (this.getLargura() - y) : lTam;
 		
-		ImagemRGB nova = new ImagemRGB(altura, largura);
+		MapaRGB nova = new MapaRGB(altura, largura);
 		for(int iCont = x, iNova = 0; iCont < altura + x; iCont++, iNova++)
 			for(int jCont = y, jNova = 0; jCont < largura + y; jCont++, jNova++)
 				nova.setPixel(iNova, jNova, this.getPixel(iCont, jCont));
 		return nova;
 	}
 	
-	public ImagemRGB girar90() {
-		ImagemRGB nova = new ImagemRGB(this.getLargura(), this.getAltura());
+	public MapaRGB girar90() {
+		MapaRGB nova = new MapaRGB(this.getLargura(), this.getAltura());
 		
 		for(int jCont = 0; jCont < this.getLargura(); jCont++)
 			for(int iCont = this.getAltura() - 1, iNova = 0; iCont >= 0; iCont--, iNova++)
 				nova.setPixel(jCont, iNova, this.getPixel(iCont, jCont));
 		return nova;			
 	}	
+
+	// public MapaRGB getImagemPorLuminosidade(int red, int green, int blue, double pctMinimo, double limiarSimilaridade) {
+		// recebo uma cor rgb
+		// recebo um limiar de similaridade 
+
+
+	// }
+
 }

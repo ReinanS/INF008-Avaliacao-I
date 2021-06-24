@@ -1,4 +1,4 @@
-package model;
+package inf008.model.Cor;
 
 public class CorRGB extends Cor{
 

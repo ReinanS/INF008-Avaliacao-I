@@ -1,11 +1,18 @@
-package model;
+package inf008.model.Cor;
 
 public class CorCMYK extends Cor{
 
     private int cyan;
     private int magente;
     private int yellow;
-    private int black;
+    private int keyBlack;
+
+    public CorCMYK(int cyan, int magente, int yellow, int keyBlack) {
+        this.setCyan(cyan);
+        this.setMagente(magente);
+        this.setYellow(yellow);
+        this.setkeyBlack(keyBlack);
+    }
 
 
     public int getCyan() {
@@ -20,8 +27,8 @@ public class CorCMYK extends Cor{
         return this.yellow;
     }
 
-    public int getBlack() {
-        return this.black;
+    public int getkeyBlack() {
+        return this.keyBlack;
     }
 
     public void setCyan(int cyan) {
@@ -34,8 +41,8 @@ public class CorCMYK extends Cor{
     public void setYellow(int yellow) {
         this.yellow = validCorCMYK(yellow);
     }
-    public void setBlack(int black) {
-        this.black = validCorCMYK(black);
+    public void setkeyBlack(int keyBlack) {
+        this.keyBlack = validCorCMYK(keyBlack);
     }
 
     // Valida cores CMYK
@@ -46,7 +53,7 @@ public class CorCMYK extends Cor{
 
     @Override
     public int getLuminosidade() {
-        return (int)(this.getBlack() * 255 / 100);
+        return (int)(this.getkeyBlack() * 255 / 100);
     }
 
 }
