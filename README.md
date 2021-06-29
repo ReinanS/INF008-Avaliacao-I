@@ -85,9 +85,9 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
       <p>
         Um sistema de avaliação de mapas para corrida de orientação funciona como se segue:
         O sistema é composto por uma biblioteca de imagens, que representam mapas de corrida de orientação. Cada imagem é composta por uma coleção bidimensional de pixels. Como as imagens provém de fontes distintas de captação, eles podem ser representadas por sistemas de representação de cores distintos. Atualmente, o atlas pode armazenar dois tipos de mapas, os mapas RGB e os mapas CMYK, contudo estuda-se a possibilidade da incorporação de outros modelos de representação (mapas HSV, por exemplo). Os mapas RGB são compostos por coleções bidimensionais de pixels de cores no formato RGB, enquanto os mapas CMYK são compostos por coleções bidimensionais de pixels de cores no forma­to CMYK. 
-        As cores RGB modelam um sistema de cores aditivas em que o Vermelho (Red), o Verde (Green) e o Azul (Blue) são combinados de várias formas de modo a reproduzir um largo espectro cromático. Uma cor RGB é representada por uma 3-upla, onde cada elemento pode assumir um valor de 0 a 255, representando a quantidade de vermelho, verde e azul que compõem a cor. 
+        As cores RGB modelam um sistema de cores aditivas em que o Vermelho (Red), o Verde (Green) e o Azul (Blue) são combinados de várias formas de modo a reproduzir um largo espectro cromático. Uma cor RGB é representada por uma 3-upla, onde cada elemento pode assumir um valor de 0 a 255, representando a quantidade de vermelho, verde e azul que compõem a cor.
         Já as cores CMYK modelam um sistema de cores subtrativas. Neste caso, cada cor é representada por uma 4-upla formado por ciano (Cyan), magenta (Magenta), amarelo (Yellow) e preto (Black (Key)). Cada um dos elementos desta tupla pode assumir um valor entre 0 e 100.
-        Pelo fato de operar com vários padrões de cores distintas, o sistema verifica a similaridade de duas cores quaisquer, através da distância (módulo da diferença) entre suas luminosidades (tom de cinza). Portanto, toda cor tem uma luminosidade associada independente do padrão. A luminosidade do padrão RGB é calculada através da expressão luminosidade = (R*0.3 + G*0.59 + B *0.11), que deve ser truncada para um valor inteiro. A luminosidade de uma cor CMYK é dado pela quantidade de preto (K) na cor multiplicado por 255 divido por 100 (luminosidade = K * 255 / 100).
+        <br>Pelo fato de operar com vários padrões de cores distintas, o sistema verifica a similaridade de duas cores quaisquer, através da distância (módulo da diferença) entre suas luminosidades (tom de cinza)<br>. Portanto, toda cor tem uma luminosidade associada independente do padrão. A luminosidade do padrão RGB é calculada através da expressão luminosidade = (R*0.3 + G*0.59 + B *0.11), que deve ser truncada para um valor inteiro. A luminosidade de uma cor CMYK é dado pela quantidade de preto (K) na cor multiplicado por 255 divido por 100 (luminosidade = K * 255 / 100).
       </p>
       <ul>
           <li> I. (3.0) – Escreva um modelo de classes que descreva adequadamente as classes de negócio do problema acima. 🟢
@@ -111,8 +111,9 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 </br>
 
 ### Métodos Opcionais/sugestões
-<li> Revisão de Models construídas na Expecificação I 🔴
+<li> Revisão de Models construídas na Expecificação I 🟢
 <li> Uso de Testes Unitários para a aplicação. 🟠
+<li> Verifica a similaridade de duas cores quaisquer, através da distância (módulo da diferença) entre suas luminosidades (tom de cinza). 🔴
 
 </br>
 

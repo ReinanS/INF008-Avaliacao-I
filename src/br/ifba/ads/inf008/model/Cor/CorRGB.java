@@ -2,15 +2,20 @@ package inf008.model.Cor;
 
 public class CorRGB extends Cor{
 
-    public static CorRGB PRETA = new CorRGB(0, 0, 0);
-	public static CorRGB BRANCA = new CorRGB(255, 255, 255);
-	public static CorRGB RED = new CorRGB(255, 0, 0);
-	public static CorRGB GREEN = new CorRGB(0, 255, 0);
-	public static CorRGB BLUE = new CorRGB(0, 0, 255);
+    public static final CorRGB PRETA = new CorRGB(0, 0, 0);
+	public static final CorRGB BRANCA = new CorRGB(255, 255, 255);
+	public static final CorRGB RED = new CorRGB(255, 0, 0);
+	public static final CorRGB GREEN = new CorRGB(0, 255, 0);
+	public static final CorRGB BLUE = new CorRGB(0, 0, 255);
 
     private int red;
     private int green;
     private int blue;
+
+    // Quando a cor RGB é chamada sem parâmetros ela retorna uma cor preta
+    public CorRGB(){
+        this(0,0,0);
+    };
 
      // Construtor de Cópia
      public CorRGB(CorRGB cor) {
@@ -37,31 +42,33 @@ public class CorRGB extends Cor{
     }
 
     public void setRed(int red) {
-        this.red = this.validCoRGB(red);
+        this.red = this.validaCor(red);
     }
 
     public void setGreen(int green) {
-        this.green = this.validCoRGB(green);
+        this.green = this.validaCor(green);
     }
 
     public void setBlue(int blue) {
-        this.blue = this.validCoRGB(blue);
+        this.blue = this.validaCor(blue);
     }
 
-    public int validCoRGB(int cor){
-        // UTITLIZAR TRATAMENTO DE ERRO, TRY CATCH
+    @Override
+    public int validaCor(int cor) {
         if(cor < 0){
-          return 0;
-        }
-        if(cor > 255){
-            return 255;
-        }
-        return cor;  
+            return 0;
+          }
+          if(cor > 255){
+              return 255;
+          }
+          return cor;  
     }
 
     @Override
     public int getLuminosidade() {
-        return (int)((this.getRed() * 0.3) + (this.getGreen() * 0.59) + (this.getBlue() * 0.11));
+        return (int)((this.getRed() * 0.3) + 
+                     (this.getGreen() * 0.59) + 
+                     (this.getBlue() * 0.11));
     }
 
     public boolean isEqual(CorRGB rgb) {
@@ -82,21 +89,23 @@ public class CorRGB extends Cor{
 						  this.getLuminosidade());
 	}
 
+    
 
-    public void clarear(double percent) {
-		percent = 1 + percent;
-		this.mudarPct(percent);		
-	}
+
+    // public void clarear(double percent) {
+	// 	percent = 1 + percent;
+	// 	this.mudarPct(percent);		
+	// }
 	
-	public void escurecer(double percent) {
-		percent = 1 - percent;
-		this.mudarPct(percent);
-	}
+	// public void escurecer(double percent) {
+	// 	percent = 1 - percent;
+	// 	this.mudarPct(percent);
+	// }
 	
-	private void mudarPct(double percent) {
-		this.setRed((int)(this.getRed() * percent));
-		this.setGreen((int)(this.getGreen() * percent));
-		this.setBlue((int)(this.getBlue() * percent));
-	}
+	// private void mudarPct(double percent) {
+	// 	this.setRed((int)(this.getRed() * percent));
+	// 	this.setGreen((int)(this.getGreen() * percent));
+	// 	this.setBlue((int)(this.getBlue() * percent));
+	// }
     
 }

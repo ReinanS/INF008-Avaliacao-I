@@ -1,3 +1,4 @@
+import inf008.model.Mapa.Mapa;
 import model.CorRGB;
 import model.ImagemRGB;
 
@@ -51,6 +52,8 @@ public class AppTest {
 				System.out.println("Este pedaço não é um fragmento da imagem");
 		}	
 		
+
+		Mapa mapa[] = Mapa.getImagemPorLuminosidade(red, green, blue, pctMinimo, limiarSimilaridade);
 		
 
 	}
