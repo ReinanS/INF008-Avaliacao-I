@@ -150,7 +150,5 @@ Esse projeto foi desenvolvido utilizando a seguinte tecnologia, e pacotes:
 - Push sua branch: `git push origin my-feature`
 
 <h4 align="center">
-    Made by <a href="https://github.com/ReinanS" target="_blank">Reinan Santos</a> & <a href="https://github.com/cerqueirav" target="_blank">Victor Cerqueira</a> 
+    Made by <a href="https://github.com/ReinanS" target="_blank">Reinan Santos</a>
 </h4>
-
- 

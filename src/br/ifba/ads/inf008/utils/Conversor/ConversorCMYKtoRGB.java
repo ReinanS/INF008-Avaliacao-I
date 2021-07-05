@@ -1,10 +1,10 @@
 package inf008.utils.Conversor;
 
-import inf008.model.Cor.Cor;
-import inf008.model.Cor.CorCMYK;
-import inf008.model.Cor.CorRGB;
-import inf008.model.Mapa.Mapa;
-import inf008.model.Mapa.MapaRGB;
+import inf008.model.Cor;
+import inf008.model.CorCMYK;
+import inf008.model.CorRGB;
+import inf008.model.Mapa;
+import inf008.model.MapaRGB;
 
 public class ConversorCMYKtoRGB implements ConversorCor{
 
@@ -23,7 +23,7 @@ public class ConversorCMYKtoRGB implements ConversorCor{
     }
 
     private int convertFragment(int arg1, CorCMYK cmyk) {
-        return (255 * (1 - arg1 / 100)) * (1 - cmyk.getkeyBlack() / 100);
+        return 255 * (1 - arg1 / 100) * (1 - cmyk.getkeyBlack() / 100);
     }
 
 }

@@ -1,7 +1,7 @@
 package inf008.utils.Conversor;
 
-import inf008.model.Cor.Cor;
-import inf008.model.Mapa.Mapa;
+import inf008.model.Cor;
+import inf008.model.Mapa;
 
 public interface ConversorCor {
 

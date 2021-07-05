@@ -1,7 +1,4 @@
-package inf008.model.Mapa;
-
-import inf008.model.Cor.Cor;
-import inf008.model.Cor.CorRGB;
+package inf008.model;
 
 // TO-DO
 // [] ADICIONAR ID E DESCRICAO A CADA MAPA
@@ -34,16 +31,23 @@ public abstract class Mapa {
     public double getPercentualPixelsSimilares(CorRGB cor, double limiarLuminosidade){
 
         int pixelsSimilares = 0;
-        int moduloPercentualLuminosidade;
+        
+        int luminosidadeGlobal = cor.getLuminosidade();
+        int valorSimilaridade = (int)(luminosidadeGlobal - limiarLuminosidade);
+        int similaridadeMinimo = (int)(luminosidadeGlobal - valorSimilaridade);
+        int similaridadeMaximo = (int)(luminosidadeGlobal - valorSimilaridade);
+        
 
         for(int i = 0; i <= this.getAltura(); i++)
           for(int j = 0; j <= this.getLargura(); j++){
-             moduloPercentualLuminosidade = (this.getPixel(i, j).getSimilaridade(cor) / cor.getLuminosidade()) * 100;
-            if(moduloPercentualLuminosidade <= limiarLuminosidade)
-                pixelsSimilares = pixelsSimilares + 1;
+                int luminosidadeLocal = this.getPixel(i, i).getLuminosidade();
+                if(similaridadeMinimo >= luminosidadeLocal && similaridadeMaximo <= luminosidadeLocal)
+                    pixelsSimilares = pixelsSimilares + 1;
           } 
         
-        return (pixelsSimilares / this.getArea()) * 100;    
+        return (this.getArea() / pixelsSimilares) * 100;    
 
     }
 }
+
+

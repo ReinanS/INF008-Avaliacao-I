@@ -1,4 +1,4 @@
-package inf008.model.Cor;
+package inf008.model;
 
 public class CorRGB extends Cor{
 
@@ -66,9 +66,13 @@ public class CorRGB extends Cor{
 
     @Override
     public int getLuminosidade() {
-        return (int)((this.getRed() * 0.3) + 
-                     (this.getGreen() * 0.59) + 
-                     (this.getBlue() * 0.11));
+        return validaLuminosidade((int)((this.getRed() * 0.3) + 
+                                        (this.getGreen() * 0.59) + 
+                                        (this.getBlue() * 0.11)));
+    }
+
+    private int validaLuminosidade(int value) {
+        return value <= 0 ? 0 : value;
     }
 
     public boolean isEqual(CorRGB rgb) {

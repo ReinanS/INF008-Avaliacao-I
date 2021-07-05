@@ -1,4 +1,4 @@
-package inf008.model.Cor;
+package inf008.model;
 
 public class CorCMYK extends Cor{
 

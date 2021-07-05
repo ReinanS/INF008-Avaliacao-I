@@ -1,7 +1,5 @@
-package inf008.model.Mapoteca;
+package inf008.model;
 
-import inf008.model.Cor.CorRGB;
-import inf008.model.Mapa.Mapa;
 
 public class Mapoteca {
     
@@ -80,15 +78,5 @@ public class Mapoteca {
          // adiciono em uma lista de mapas(ou imagens) todos aqueles 
          // em que foram encontrados a porcentagem minima
          // retorno essa lista de mapas ou (imagens)
-
-        //  int qtdPixels = imagemRGB.getAltura() * imagemRGB.getLargura();
-        //  int qtdPixelsMinimo = (int) (qtdPixels * pctMinimo);
-        // CorRGB Corrgb = new CorRGB(red, green, blue);
-
-        //  int luminosidade = rgb.getLuminosidade();
- 
-        //  int similar = (int)(luminosidade * limiarSimilaridade);
-        //  int similarNegativo = luminosidade - similar;
-        //  int similarPositivo = luminosidade + similar;
 
 }

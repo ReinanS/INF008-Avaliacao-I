@@ -1,10 +1,10 @@
 package inf008.utils.Conversor;
 
-import inf008.model.Cor.Cor;
-import inf008.model.Cor.CorCMYK;
-import inf008.model.Cor.CorRGB;
-import inf008.model.Mapa.Mapa;
-import inf008.model.Mapa.MapaCMYK;
+import inf008.model.Cor;
+import inf008.model.CorCMYK;
+import inf008.model.CorRGB;
+import inf008.model.Mapa;
+import inf008.model.MapaCMYK;
 
 public class ConversorRGBtoCMYK implements ConversorCor{
 

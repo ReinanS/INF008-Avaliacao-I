@@ -1,7 +1,4 @@
-package inf008.model.Mapa;
-
-import inf008.model.Cor.Cor;
-import inf008.model.Cor.CorRGB;
+package inf008.model;
 
 public class MapaRGB extends Mapa{
     private CorRGB[][] pixels;
