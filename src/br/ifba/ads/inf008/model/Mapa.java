@@ -35,7 +35,7 @@ public abstract class Mapa {
         int luminosidadeGlobal = cor.getLuminosidade();
         int valorSimilaridade = (int)(luminosidadeGlobal - limiarLuminosidade);
         int similaridadeMinimo = (int)(luminosidadeGlobal - valorSimilaridade);
-        int similaridadeMaximo = (int)(luminosidadeGlobal - valorSimilaridade);
+        int similaridadeMaximo = (int)(luminosidadeGlobal + valorSimilaridade);
         
 
         for(int i = 0; i <= this.getAltura(); i++)
@@ -45,7 +45,7 @@ public abstract class Mapa {
                     pixelsSimilares = pixelsSimilares + 1;
           } 
         
-        return (this.getArea() / pixelsSimilares) * 100;    
+        return (pixelsSimilares / this.getArea()) * 100;    
 
     }
 }
