@@ -62,7 +62,7 @@ public class Mapoteca {
         // 20 pixels - quantidade minima de pixels
         // 28 - luminosidade da cor
         // 2.8 - Valor de similaridade = luminosidade - limiarSimilaridade.
-        // 25 - Similar negativo = luminosidade + valor de similaridade
+        // 25 - Similar negativo = luminosidade - valor de similaridade
         // 31 - Similar positivo = luminosidde + valor de similaride
 
         // devo procurar ao menos 20 pixels em que sua luminosidade

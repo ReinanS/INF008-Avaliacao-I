@@ -42,10 +42,10 @@ public abstract class Mapa {
           for(int j = 0; j <= this.getLargura(); j++){
                 int luminosidadeLocal = this.getPixel(i, i).getLuminosidade();
                 if(similaridadeMinimo >= luminosidadeLocal && similaridadeMaximo <= luminosidadeLocal)
-                    pixelsSimilares = pixelsSimilares + 1;
+                    pixelsSimilares ++;
           } 
         
-        return (pixelsSimilares / this.getArea()) * 100;    
+        return (double)pixelsSimilares / this.getArea() * 100;    
 
     }
 }
