@@ -16,8 +16,7 @@ public class MapaRGB extends Mapa{
 	}
 	
 	@Override
-	public
-	void setPixel(int altura, int largura, Cor pixel) {
+	public void setPixel(int altura, int largura, Cor pixel) {
 		this.pixels[altura][largura] = (CorRGB)pixel;
 	}
 	
@@ -25,13 +24,12 @@ public class MapaRGB extends Mapa{
 		this.setPixel(altura, largura, new CorRGB(red, green, blue));
 	}
 
-	@Override
-	public
-	Cor[][] getImagem() {
+	@Override 
+	public Cor[][] getImagem() {
 		return this.pixels;
 	}	
 
-	@Override
+	@Override 
 	public CorRGB getPixel(int altura, int largura){
 		return this.pixels[altura][largura];
 	}

@@ -65,7 +65,7 @@ public class CorCMYK extends Cor{
     }
 
     @Override
-    public int validaCor(int cor) {
+    protected int validaCor(int cor) {
         if(cor < 0){
             return 0;
           }

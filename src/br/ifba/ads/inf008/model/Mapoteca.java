@@ -19,7 +19,7 @@ public class Mapoteca {
         this.mapas = novoMapa;
     }
 
-    public Mapa[] getMapas() {
+    private Mapa[] getMapas() {
         return this.mapas;
     }
 
